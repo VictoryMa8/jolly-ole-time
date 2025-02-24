@@ -1,3 +1,3 @@
-# jolly-ole-time
+# ole-faithful
 
-Jolly Ole Time, the web application for students at St. Olaf College.
+Ole Faithful, a web application for students at St. Olaf College.
