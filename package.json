@@ -1,4 +1,23 @@
 {
+  "name": "ole-faithful",
+  "description": "Ole Faithful, a web application for students at St. Olaf College.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictoryMa8/ole-faithful.git"
+  },
+  "author": "Victory Ma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictoryMa8/ole-faithful/issues"
+  },
+  "homepage": "https://github.com/VictoryMa8/ole-faithful#readme",
   "dependencies": {
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
