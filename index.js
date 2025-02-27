@@ -28,12 +28,13 @@ app.get("/", async (req, res) => {
     });
 });
 
-app.post("/submit-name", async (req, res) => {
-  const name = req.body.name;
-  const result = await db.query(
-    "INSERT INTO test (name) VALUES($1) RETURNING *;",
-    [name]
+app.post("/submit", async (req, res) => {
+  const entry = req.body.entry;
+  await db.query(
+    "INSERT INTO test (name) VALUES($1);",
+    [entry]
   );
+  console.log(`Added to database: ${entry}`)
   res.redirect("/");
 });
 
