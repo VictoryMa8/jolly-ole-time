@@ -10,7 +10,6 @@ env.config();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-/*
 const db = new pg.Client({
   user: process.env.PG_USER,
   host: process.env.PG_HOST,
@@ -18,11 +17,24 @@ const db = new pg.Client({
   password: process.env.PG_PASSWORD,
   port: process.env.PG_PORT,
 });
-db.connect();
-*/
 
-app.get("/", (req, res) => {
-  res.render("home.ejs");
+db.connect();
+
+let test = "This is a test!";
+
+app.get("/", async (req, res) => {
+  res.render("home.ejs", {
+      test: test
+    });
+});
+
+app.post("/submit-name", async (req, res) => {
+  const name = req.body.name;
+  const result = await db.query(
+    "INSERT INTO test (name) VALUES($1) RETURNING *;",
+    [name]
+  );
+  res.redirect("/");
 });
 
 app.listen(port, () => {
