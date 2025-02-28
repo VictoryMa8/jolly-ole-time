@@ -20,11 +20,11 @@ const db = new pg.Client({
 
 db.connect();
 
-let test = "This is a test!";
+let test1 = "This is a test!";
 
 app.get("/", async (req, res) => {
   res.render("home.ejs", {
-      test: test
+      test: test1
     });
 });
 
